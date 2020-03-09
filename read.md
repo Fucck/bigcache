@@ -1,7 +1,6 @@
 #问卷调查数据库设计
 
 ###用户表设计（questionnaire_user）
-
 field_name | type | null | key | default | extra
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 id|int|NO|pk|NULL|auto_increment

@@ -1,6 +1,7 @@
 #问卷调查数据库设计
 
 ###用户表设计（questionnaire_user）
+
 field_name | type | null | key | default | extra
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 id|int|NO|pk|NULL|auto_increment
@@ -21,7 +22,9 @@ last_login|datetime|NO||NULL| CURRENT_TIMESTAMP
 	group字段表示用户组，与组织表id相关联
 	微信后台鉴权接口返回用户的openid和session_key用作鉴权
 
+
 ###权限表设计（）
+
 field_name | type | null | key | default | extra
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 id|int|NO|pk|NULL|auto_increment
@@ -30,7 +33,9 @@ authority|varchar(1024)|NO||NULL|
 group|int|NO|MUL|NULL|
 	group字段表示用户组，与组织表id相关联
 
+
 ###问卷表设计（questionnaire_questionnaire）
+
 field_name | type | null | key | default | extra
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 id|int|NO|pk|NULL|auto_increment
@@ -45,13 +50,16 @@ group|varchar(126)|NO|MUL|NULL|
 	creater字段与用户表的用户id关联，group字段表示用户组，与组织表id相关联
 
 ###问卷—问题关联表（questionnaire_question_relate_paper）
+
 field_name | type | null | key | default | extra
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 id|int|NO|pk|NULL|
 question_id|int|NO|MUL|NULL|
 questionnaire_id|int|NO|MUL|NULL|
 seq|int|NO||0|
+
 	seq决定问题在问卷中的顺序
+
 
 ###问题表设计（questionnaire_question）
 field_name | type | null | key | default | extra
@@ -64,6 +72,8 @@ create_time|datetime|NO||NULL|CURRENT_TIMESTAMP
 update_time|datetime|NO||NULL| CURRENT_TIMESTAMP
 
 	type说明问题类型
+	
+	
 ###问题-选项关联表(questionnaire_choice_relate_question)
 field_name | type | null | key | default | extra
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
@@ -72,6 +82,7 @@ choice_id|int|NO|MUL|NULL|
 question_id|int|NO|MUL|NULL|
 score|int|NO||0|
 seq|int|NO||0|
+
 	aid关联问题表的问题id；qid关联问题表的问题id；seq决定问题在问题中的顺序；score表示该选项在对应问题下的分数
 
 
